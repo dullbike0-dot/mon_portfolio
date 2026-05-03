@@ -608,29 +608,37 @@ function renderKrita(theme) {
     `<img src="${src}" style="width:100%; border-radius:12px; margin-bottom:12px; border: 1.5px solid var(--black-mid);" alt="Dessin">`
   ).join('');
 
+  // --- LOGIQUE ANIMATION ---
+  
   // 1. Fonction pour le carrousel (Entraînements)
-  const renderCarousel = (section) => {
-    const vidsHTML = section.vids.map(v => `
-      <div class="carousel-item" style="width:240px; flex-shrink: 0; scroll-snap-align: start;">
-        <video muted loop playsinline 
-               onmouseover="this.play()" 
-               onmouseout="this.pause()" 
-               onclick="openVideoLightbox('${v}')" 
-               style="width:100%; border-radius:14px; border: 1.5px solid var(--black-mid); cursor:pointer; display: block;">
-          <source src="${v}" type="video/mp4">
-        </video>
-      </div>
-    `).join('');
+const renderCarousel = (section) => {
+  // Dans la fonction renderCarousel (script.js)
+  const vidsHTML = section.vids.map(v => `
+    <div class="carousel-item" style="width:240px; flex-shrink: 0; scroll-snap-align: start;">
+      <video muted loop playsinline 
+             onmouseover="this.play()" 
+             onmouseout="this.pause()" 
+             onclick="openVideoLightbox('${v}')" 
+            style="width:100%; border-radius:14px; border: 1.5px solid var(--black-mid); cursor:pointer; display: block;">
+        <source src="${v}" type="video/mp4">
+      </video>
+    </div>
+` ).join('');
     
     return `
       <div class="carousel-section">
         <h3 class="m-subtitle">${section.title}</h3>
         <p class="m-text" style="margin-bottom: 20px;">${section.text}</p>
+        
         <div class="carousel-wrapper">
           <button class="car-nav prev" aria-label="Précédent" onclick="this.nextElementSibling.scrollBy({left: -255, behavior: 'smooth'})">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
           </button>
-          <div class="carousel">${vidsHTML}</div>
+
+          <div class="carousel">
+            ${vidsHTML}
+          </div>
+
           <button class="car-nav next" aria-label="Suivant" onclick="this.previousElementSibling.scrollBy({left: 255, behavior: 'smooth'})">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
           </button>
@@ -638,10 +646,9 @@ function renderKrita(theme) {
       </div>
     `;
   };
-
   // 2. Fonction pour le lecteur LARGE et CENTRÉ (Projets)
   const renderLargeVideo = (section) => {
-    const videoSrc = section.vids[0] || ""; 
+    const videoSrc = section.vids[0] || ""; // On prend la première vidéo du tableau
     return `
       <h3 class="m-subtitle" style="margin-top:40px; text-align:center;">${section.title}</h3>
       <p class="m-text" style="margin: 0 auto 20px; text-align:center;">${section.text}</p>
@@ -691,11 +698,12 @@ function renderKrita(theme) {
   modalBody.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       activeTab = btn.dataset.tab;
-      renderKrita(theme); 
+      renderKrita(theme); // On relance le rendu pour mettre à jour l'affichage
     });
   });
   bindCursor(modalBody);
 }
+
 
 function renderPhotoshop(theme) {
   modalBody.innerHTML = `
