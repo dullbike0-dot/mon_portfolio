@@ -568,31 +568,26 @@ function renderBlender(theme) {
   };
 
   // 2. Outil pour générer les vidéos larges et centrées
+  // 2. Outil pour générer les vidéos larges et centrées
   const renderLargeVideo = (section) => {
     const videoSrc = section.vids[0] || ""; 
+    
+    // Détection magique : est-ce un lien YouTube ?
+    const isYouTube = videoSrc.includes("youtube");
+    
+    // On prépare le bon lecteur selon le cas
+    const lecteurHTML = isYouTube 
+      ? `<div style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="${videoSrc}?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+      : `<video controls playsinline style="width:100%; display:block; background:#000;"><source src="${videoSrc}" type="video/mp4">Votre navigateur ne supporte pas la lecture de vidéos.</video>`;
+
     return `
       <h3 class="m-subtitle" style="margin-top:40px; text-align:center;">${section.title}</h3>
       <p class="m-text" style="margin: 0 auto 20px; text-align:center;">${section.text}</p>
       <div style="width:100%; max-width:700px; margin: 0 auto; border-radius:16px; overflow:hidden; border: 2px solid var(--fire); box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-        <video controls playsinline style="width:100%; display:block; background:#000;">
-          <source src="${videoSrc}" type="video/mp4">
-          Votre navigateur ne supporte pas la lecture de vidéos.
-        </video>
+        ${lecteurHTML}
       </div>
     `;
   };
-
-  // 3. Assemblage final
-  modalBody.innerHTML = `
-    <h2 class="m-title">Blender</h2>
-    ${renderCarousel(theme.entrainements)}
-    <hr class="m-divider">
-    ${renderLargeVideo(theme.projet1)}
-    <hr class="m-divider">
-    ${renderLargeVideo(theme.projet2)}
-  `;
-  bindCursor(modalBody);
-}
 
 function renderKrita(theme) {
   if (activeTab === 'dessin') activeTab = 'traditionnel';
