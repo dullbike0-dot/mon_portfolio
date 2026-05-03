@@ -429,7 +429,7 @@ function renderMusique(theme) {
   if (!audio) {
     audio = document.createElement('audio');
     audio.id = 'global-audio';
-    audio.src = 'chill.wav'; // Chemin de ton fichier audio
+    audio.src = 'chill.mp3'; // Chemin de ton fichier audio
     audio.preload = 'auto';
     audio.loop = true;
     audio.style.display = 'none';
