@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antoine Lavigne — Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="cursor">
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+  </div>
+
+  <div class="grain"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a class="nav-logo" href="#">
+      <span class="logo-initials">AL</span>
+      <span class="logo-divider">—</span>
+      <span class="logo-name">Portfolio</span>
+    </a>
+    <div class="nav-center">
+      <span class="status-badge">
+        <span class="status-dot"></span>
+        Disponible · Bordeaux
+      </span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="mailto:antoinelavigne753@gmail.com" class="nav-cta">
+          Travaillons ensemble
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+            <path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+
+    <!-- BULLES -->
+ 
+
+    <div class="bw" style="top:11%;right:10%;--dur:7.5s;--delay:1.2s;--amp:-18px;--amp2:22px;--rot0:5deg;--rot1:-2deg;--rot2:4deg;">
+      <div class="bubble b-fire" data-theme="courtmetrage">
+        <span class="b-icon">▶</span><span class="b-label">Court-métrage</span>
+      </div>
+    </div>
+
+    <div class="bw" style="top:42%;right:4%;--dur:11s;--delay:0.4s;--amp:-32px;--amp2:10px;--rot0:-2deg;--rot1:4deg;--rot2:-3deg;">
+      <div class="bubble b-dark" data-theme="musique">
+        <span class="b-icon">♪</span><span class="b-label">Musique</span>
+      </div>
+    </div>
+
+    <div class="bw" style="top:30%;left:50%;--dur:8.5s;--delay:2s;--amp:-20px;--amp2:18px;--rot0:3deg;--rot1:-4deg;--rot2:2deg;">
+      <div class="bubble b-outline" data-theme="blender">
+        <span class="b-icon">◈</span><span class="b-label">Blender</span>
+      </div>
+    </div>
+
+    <div class="bw" style="top:76%;right:13%;--dur:10s;--delay:0.8s;--amp:-16px;--amp2:26px;--rot0:-5deg;--rot1:3deg;--rot2:-2deg;">
+      <div class="bubble b-fire" data-theme="krita">
+        <span class="b-icon">✏</span><span class="b-label">Dessin</span>
+      </div>
+    </div>
+
+    <div class="bw" style="top:56%;right:38%;--dur:12s;--delay:1.5s;--amp:-20px;--amp2:14px;--rot0:2deg;--rot1:-4deg;--rot2:3deg;">
+      <div class="bubble b-dark" data-theme="photoshop">
+        <span class="b-icon">⬡</span><span class="b-label">Photoshop</span>
+      </div>
+    </div>
+
+
+
+    <!-- DÉCORATIFS -->
+    <div class="float-el deco-badge" style="top:8%;left:40%;--dur:14s;--delay:0.6s;--amp:-36px;--amp2:18px;--rot0:0deg;--rot1:5deg;--rot2:-3deg;">
+      <div class="db-pin">📍</div>
+      <div class="db-info">
+        <div class="db-city">Bordeaux</div>
+        <div class="db-country">France</div>
+      </div>
+    </div>
+
+    <div class="float-el portrait-bubble" style="top:40%; right:18%; --dur:10s; --delay:0.2s; --amp:-25px; --amp2:15px; --rot0:-1deg; --rot1:3deg; --rot2:-1deg;">
+  <div class="pb-container">
+    <img src="photo moi sans fond.png" alt="Antoine Lavigne" class="pb-photo">
+  </div>
+  <div class="pb-badge">Hello !</div>
+</div>
+
+    <div class="float-el stat-card" style="top:60%;left:33%;--dur:10.5s;--delay:1.5s;--amp:-20px;--amp2:24px;--rot0:4deg;--rot1:-3deg;--rot2:5deg;">
+      <div class="sc-num">3<sup>ans</sup></div>
+      <div class="sc-label">d'expérience</div>
+    </div>
+
+    <div class="float-el deco-star" style="top:24%;right:26%;--dur:14s;--delay:2s;--amp:-18px;--amp2:28px;--rot0:0deg;--rot1:20deg;--rot2:-15deg;">✦</div>
+
+    <div class="float-el deco-big-num" style="top:2%;left:50%;transform:translateX(-50%);--dur:18s;--delay:0s;--amp:-12px;--amp2:8px;">01</div>
+
+    <!-- TEXTE HERO -->
+    <div class="hero-content">
+      <p class="hero-eyebrow">
+        <span class="ey-line"></span>
+        Antoine Lavigne
+        <span class="ey-dot">·</span>
+        Com. Digitale
+      </p>
+
+      <h1 class="hero-h1">
+        Découvrez<br>
+        mon<br>
+         <em>univers</em>
+      </h1>
+
+      <div class="hero-foot">
+        <p class="hero-sub">Clique sur un thème<br>pour explorer mes projets.</p>
+        <div class="rotating-hint">
+          <svg class="rh-ring" viewBox="0 0 120 120">
+            <path id="rh-path" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" fill="none"/>
+            <text class="rh-text" font-size="11.5">
+              <textPath href="#rh-path" startOffset="0%">Explorer · Explorer · Explorer · Explorer · </textPath>
+            </text>
+          </svg>
+          <div class="rh-arrow">↑</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-band">
+    <div class="marquee-inner">
+      <span>Communication Digitale</span><span class="mdot">◆</span>
+      <span>Stratégie de Contenu</span><span class="mdot">◆</span>
+      <span>Social Media</span><span class="mdot">◆</span>
+      <span>Identité Visuelle</span><span class="mdot">◆</span>
+      <span>UX Writing</span><span class="mdot">◆</span>
+      <span>Antoine Lavigne</span><span class="mdot">◆</span>
+      <span>Communication Digitale</span><span class="mdot">◆</span>
+      <span>Stratégie de Contenu</span><span class="mdot">◆</span>
+      <span>Social Media</span><span class="mdot">◆</span>
+      <span>Identité Visuelle</span><span class="mdot">◆</span>
+      <span>UX Writing</span><span class="mdot">◆</span>
+      <span>Antoine Lavigne</span><span class="mdot">◆</span>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal-overlay" aria-hidden="true">
+    <div id="modal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <div class="mh-left">
+          <span class="modal-label" id="modal-label"></span>
+        </div>
+        <div class="mh-right">
+          <button class="modal-close" id="modal-close" aria-label="Fermer">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+              <path d="M1.5 1.5L11.5 11.5M11.5 1.5L1.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            Fermer
+          </button>
+        </div>
+      </div>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <span>© 2025 Antoine Lavigne</span>
+    <span>Bordeaux, France</span>
+    <span>Fait avec passion ✦</span>
+  </footer>
+
+  <script src="script.js"></script>
+  <div id="video-lightbox" class="lightbox-overlay" onclick="closeVideoLightbox()">
+  <div class="lightbox-content" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeVideoLightbox()">✕</button>
+    <video id="lightbox-video-player" controls autoplay>
+      <source src="" type="video/mp4">
+      Votre navigateur ne supporte pas la lecture de vidéos.
+    </video>
+  </div>
+</div>
+<div id="img-lightbox" class="lightbox-overlay" onclick="closeImgLightbox()">
+  <div class="lightbox-content" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeImgLightbox()">✕</button>
+    <img src="" id="img-lightbox-content" style="max-width: 90vw; max-height: 85vh; border-radius: 12px; border: 1.5px solid var(--fire);">
+  </div>
+</div>
+<div id="mini-player" class="mini-player">
+  <div class="mp-info">
+    <div class="mp-waves">
+      <span></span><span></span><span></span>
+    </div>
+    <span class="mp-track">Chill Things</span>
+  </div>
+  <div class="mp-controls">
+    <button id="mp-playpause" aria-label="Pause/Lecture">
+      <svg id="mp-icon" width="12" height="12" viewBox="0 0 14 14" fill="none"><rect x="3" y="3" width="3" height="8" rx="1" fill="currentColor"/><rect x="8" y="3" width="3" height="8" rx="1" fill="currentColor"/></svg>
+    </button>
+    <button id="mp-close" aria-label="Fermer la musique">✕</button>
+  </div>
+</div>
+</body>
+</html>
