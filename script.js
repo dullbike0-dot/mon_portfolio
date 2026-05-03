@@ -596,6 +596,107 @@ function renderBlender(theme) {
   `;
   bindCursor(modalBody);
 } // <--- Fermeture indispensable de la fonction renderBlender
+function renderKrita(theme) {
+  if (activeTab === 'dessin') activeTab = 'traditionnel';
+
+  // --- GALERIES IMAGES ---
+  const galleryTrad = theme.traditionnel.images.map(src =>
+    `<img src="${src}" style="width:100%; border-radius:12px; margin-bottom:12px; border: 1.5px solid var(--black-mid);" alt="Dessin">`
+  ).join('');
+
+  const galleryNum = theme.numerique.images.map(src =>
+    `<img src="${src}" style="width:100%; border-radius:12px; margin-bottom:12px; border: 1.5px solid var(--black-mid);" alt="Dessin">`
+  ).join('');
+
+  // 1. Fonction pour le carrousel (Entraînements)
+  const renderCarousel = (section) => {
+    const vidsHTML = section.vids.map(v => `
+      <div class="carousel-item" style="width:240px; flex-shrink: 0; scroll-snap-align: start;">
+        <video muted loop playsinline 
+               onmouseover="this.play()" 
+               onmouseout="this.pause()" 
+               onclick="openVideoLightbox('${v}')" 
+               style="width:100%; border-radius:14px; border: 1.5px solid var(--black-mid); cursor:pointer; display: block;">
+          <source src="${v}" type="video/mp4">
+        </video>
+      </div>
+    `).join('');
+    
+    return `
+      <div class="carousel-section">
+        <h3 class="m-subtitle">${section.title}</h3>
+        <p class="m-text" style="margin-bottom: 20px;">${section.text}</p>
+        <div class="carousel-wrapper">
+          <button class="car-nav prev" aria-label="Précédent" onclick="this.nextElementSibling.scrollBy({left: -255, behavior: 'smooth'})">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="carousel">${vidsHTML}</div>
+          <button class="car-nav next" aria-label="Suivant" onclick="this.previousElementSibling.scrollBy({left: 255, behavior: 'smooth'})">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    `;
+  };
+
+  // 2. Fonction pour le lecteur LARGE et CENTRÉ (Projets)
+  const renderLargeVideo = (section) => {
+    const videoSrc = section.vids[0] || ""; 
+    return `
+      <h3 class="m-subtitle" style="margin-top:40px; text-align:center;">${section.title}</h3>
+      <p class="m-text" style="margin: 0 auto 20px; text-align:center;">${section.text}</p>
+      <div style="width:100%; max-width:700px; margin: 0 auto; border-radius:16px; overflow:hidden; border: 2px solid var(--fire); box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+        <video controls playsinline style="width:100%; display:block; background:#000;">
+          <source src="${videoSrc}" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+      </div>
+    `;
+  };
+
+  const animationContent = `
+    ${renderCarousel(theme.animation.entrainements)}
+    <hr class="m-divider">
+    ${renderLargeVideo(theme.animation.petitfilm)}
+    <hr class="m-divider">
+    ${renderLargeVideo(theme.animation.ecogestion)}
+  `;
+
+  // --- ASSEMBLAGE FINAL ---
+  modalBody.innerHTML = `
+    <div class="tabs-bar">
+      <button class="tab-btn ${activeTab==='traditionnel'?'active':''}" data-tab="traditionnel">Traditionnel</button>
+      <button class="tab-btn ${activeTab==='numerique'?'active':''}" data-tab="numerique">Numérique</button>
+      <button class="tab-btn ${activeTab==='animation'?'active':''}" data-tab="animation">Animation</button>
+    </div>
+
+    <div class="tab-pane ${activeTab==='traditionnel'?'active':''}" id="tab-traditionnel">
+      <h2 class="m-title">${theme.traditionnel.title}</h2>
+      <p class="m-text">${theme.traditionnel.text}</p>
+      <div class="gallery-grid">${galleryTrad}</div>
+    </div>
+
+    <div class="tab-pane ${activeTab==='numerique'?'active':''}" id="tab-numerique">
+      <h2 class="m-title">${theme.numerique.title}</h2>
+      <p class="m-text">${theme.numerique.text}</p>
+      <div class="gallery-grid">${galleryNum}</div>
+    </div>
+
+    <div class="tab-pane ${activeTab==='animation'?'active':''}" id="tab-animation">
+      <h2 class="m-title">Animation</h2>
+      ${animationContent}
+    </div>
+  `;
+
+  modalBody.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeTab = btn.dataset.tab;
+      renderKrita(theme); 
+    });
+  });
+  bindCursor(modalBody);
+}
+
 function renderPhotoshop(theme) {
   modalBody.innerHTML = `
     <h2 class="m-title">Photoshop</h2>
