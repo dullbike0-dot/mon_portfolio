@@ -63,7 +63,7 @@ const THEMES = {
     projet1: {
       title: 'Ma première création perso',
       text:  "Animation de spider-man, cette animation m'a permis d'apprendre les principes de timing et d'arc de l'animation, ce premier gros projet m'a permis d'apprendre le rigging de personnage et comment utiliser la caméra ainsi que les lumières",
-      vids:  ['Blender/spider_man.mp4'], // Ta vidéo centrée ici
+      vids:  ['https://youtu.be/ypUs9nX7gtE'], // Ta vidéo centrée ici
     },
     projet2: {
       title: 'Promotion Marketing',
