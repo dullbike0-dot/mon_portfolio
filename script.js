@@ -326,11 +326,17 @@ function renderFilmAmour(film) {
     <hr class="m-divider">
 
     <h3 class="m-subtitle">Visionnage</h3>
-    <div style="margin-top:14px; border-radius:16px; overflow:hidden; border: 1.5px solid var(--black-mid);">
-      <video controls width="100%" preload="metadata">
-        <source src="L'amour_seul_entier.mp4#t=0.001" type="video/mp4">
-        Votre navigateur ne supporte pas la lecture de vidéos.
-      </video>
+    <div style="margin-top:14px; border-radius:16px; overflow:hidden; border: 1.5px solid var(--black-mid); aspect-ratio: 16/9;">
+      <iframe 
+        width="100%" 
+        height="100%" 
+        src="https://www.youtube.com/embed/u4rRYzAzJNQ?rel=0&enablejsapi=1" 
+        title="L'amour seul - Court-métrage" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
     </div>
   `;
   bindCursor(modalBody);
