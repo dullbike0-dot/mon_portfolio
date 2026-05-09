@@ -58,7 +58,7 @@ const THEMES = {
     entrainements: {
       title: 'Tutoriels & Entraînements',
       text:  "J'ai étudié de façon autodidacte plusieurs tutoriels m'amenant à apprendre les bases de la modélisation, du shading, du rigging et de l'animation 3D avec Blender.",
-      vids:  ['Blender/chateau.mp4', 'Blender/citrouille.mp4', 'Blender/main render.mp4','Blender/fusée.mp4'], // Remplace par tes vidéos
+      vids:  ['Blender/chateau.mp4', 'Blender/citrouille.mp4', 'Blender/Main_render.mp4','Blender/fusée.mp4'], // Remplace par tes vidéos
     },
     projet1: {
       title: 'Ma première création perso',
