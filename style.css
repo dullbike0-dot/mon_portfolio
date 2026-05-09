@@ -528,6 +528,71 @@ body.cursor-hover #cursor-dot { background: var(--fire); transform: translate(-5
 
 @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
+
+/* ==========================================================================
+   SKIP LINK (Accessibilité)
+   ========================================================================== */
+
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 16px;
+  z-index: 10000;
+  padding: 10px 20px;
+  background: var(--fire);
+  color: var(--hat);
+  font-family: var(--f-body);
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+/* ==========================================================================
+   CASCADE — Animation photos/vidéos qui tombent en cascade
+   ========================================================================== */
+
+.cascade-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.cascade-item {
+  position: absolute;
+  top: -220px;
+  border-radius: 16px;
+  overflow: hidden;
+  opacity: 0;
+  box-shadow: 0 8px 32px rgba(16,12,8,0.12);
+  border: 1.5px solid rgba(16,12,8,0.08);
+  animation: cascadeFall linear infinite;
+  will-change: transform, opacity;
+}
+
+.cascade-item img,
+.cascade-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+@keyframes cascadeFall {
+  0%   { transform: translateY(0) rotate(var(--tilt, 0deg)); opacity: 0; }
+  5%   { opacity: var(--max-op, 0.13); }
+  90%  { opacity: var(--max-op, 0.13); }
+  100% { transform: translateY(calc(100vh + 240px)) rotate(calc(var(--tilt, 0deg) * 1.3)); opacity: 0; }
+}
+
 /* ==========================================================================
    MODAL OVERLAY
    ========================================================================== */
@@ -1450,4 +1515,76 @@ body.cursor-hover #cursor-dot { background: var(--fire); transform: translate(-5
 
 .portrait-bubble:hover .pb-photo {
   transform: translateY(-20px) scale(1.2); /* Accentue le dépassement au hover */
+}
+/* ==========================================================================
+   FOCUS VISIBLE — Accessibilité clavier
+   ========================================================================== */
+
+:focus-visible {
+  outline: 2.5px solid var(--fire);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+button:focus-visible,
+a:focus-visible,
+.bubble:focus-visible {
+  outline: 2.5px solid var(--fire);
+  outline-offset: 4px;
+  border-radius: 999px;
+}
+
+/* Bulles accessibles avec role button */
+.bubble {
+  background: none;
+  font-family: var(--f-body);
+  /* Les styles visuels restent dans les classes existantes */
+}
+
+/* Lightbox close buttons accessible */
+.lightbox-close {
+  background: rgba(16,12,8,0.6);
+  border: 1.5px solid rgba(243,244,245,0.2);
+  color: var(--hat);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 100;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.lightbox-close:hover {
+  background: var(--fire);
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   RÉDUCTION DE MOUVEMENT — Accessibilité
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .cascade-item,
+  .bw,
+  .float-el,
+  .rh-ring,
+  .rh-arrow,
+  .marquee-inner,
+  .status-dot {
+    animation: none !important;
+  }
+
+  .cascade-container { display: none; }
+
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
