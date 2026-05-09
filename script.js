@@ -80,12 +80,12 @@ const THEMES = {
     traditionnel: {
       title: 'Dessin traditionnel',
       text:  'Mes créations réalisées sur supports physiques : papier, crayon, feutre ou peinture.',
-      images: ['dessin/croquis_1.jpg', 'dessin/Awesome.jpg', 'dessin/Donald.jpg','dessin/Granny.jpg','dessin/hammerdinger.jpg','dessin/hamster.jpg','dessin/joker croquis.png','dessin/mec avec ver.png','dessin/Rabbit.jpg'], // Hauteurs d'images fictives
+      images: ['dessin/Croquis_1.jpg', 'dessin/Awesome.jpg', 'dessin/Donald.jpg','dessin/Granny.jpg','dessin/hammerdinger.jpg','dessin/hamster.jpg','dessin/joker croquis.png','dessin/mec avec ver.png','dessin/Rabbit.jpg'], // Hauteurs d'images fictives
     },
     numerique: {
       title: 'Dessin numérique',
       text:  'Mes illustrations numériques réalisées principalement sur Krita.',
-      images: ['dessin/histoire j-o.png', 'dessin/monopoly.png','dessin/lifeline.png','dessin/panda.png','dessin/stitch.png'], 
+      images: ['dessin/histoire j-o.png', 'dessin/monopoly.png','dessin/lifeline.png','dessin/panda.png','dessin/STITCH.png'], 
     },
     animation: {
       entrainements: {
