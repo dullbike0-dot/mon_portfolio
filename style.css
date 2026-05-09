@@ -253,7 +253,7 @@ body.cursor-hover #cursor-dot { background: var(--fire); transform: translate(-5
 
   /* Default: Chef's Hat / Smoky Black */
   background: var(--hat);
-  color: #FF0000;
+  color: #000000;
   border: 1.5px solid var(--black-mid);
   box-shadow: 0 4px 20px rgba(16,12,8,0.10), 0 1px 4px rgba(16,12,8,0.06);
 
@@ -275,7 +275,7 @@ body.cursor-hover #cursor-dot { background: var(--fire); transform: translate(-5
 
 .b-dark {
   background: var(--black);
-  color: #00FF00;
+  color: #000000;
   border-color: var(--black);
   box-shadow: 0 6px 24px rgba(16,12,8,0.25), 0 1px 4px rgba(16,12,8,0.10);
 }
