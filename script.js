@@ -91,7 +91,7 @@ const THEMES = {
       entrainements: {
         title: 'Entraînements',
         text:  'Série de courts exercices d\'animation frame-by-frame...',
-        vids:  ['Animation/balle entrainement 1.mp4', 'Animation/balle entrainement 2.mp4', 'Animation/cool cube anim smear.mp4', 'Animation/cube.mp4', 'Animation/crane.mp4', 'Animation/marche entrainement.mp4', 'Animation/bonhomme entrainement.mp4', 'Animation/bpnhomme tombe entrainement.mp4'],
+        vids:  ['Animation/balle entrainement 1.mp4', 'Animation/balle entrainement 2.mp4', 'Animation/cool cube anim smear.mp4', 'Animation/cube.mp4', 'Animation/marche entrainement.mp4', 'Animation/bonhomme entrainement.mp4', 'Animation/bpnhomme tombe entrainement.mp4'],
       },
       petitfilm: {
         title: "L'animation depuis petit",
