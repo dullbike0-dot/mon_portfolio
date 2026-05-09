@@ -96,12 +96,12 @@ const THEMES = {
       petitfilm: {
         title: "L'animation depuis petit",
         text:  "l'animation est apparu très tôt dans mes passions, ma première grosse animation a était réalisé en 3ème",
-        vids: ['Animation/animation_3eme_pingouin.mp4'],
+        vids: ['Animation/animation_3eme_pingouin.MP4'],
       },
       ecogestion: {
         title: 'Vidéo Éco-gestion',
         text:  'Animation pédagogique de 3 minutes commandée par un lycée...',
-        vids: ['Animation/Animation_Eco_gestion.MOV'],
+        vids: ['Animation/Animation_Eco_gestion.mp4'],
       },
     },
   },
